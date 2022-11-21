@@ -10,6 +10,8 @@ import android.text.style.StyleSpan
 import android.text.style.TypefaceSpan
 import android.text.style.UnderlineSpan
 import android.util.Log
+import android.view.Gravity
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -23,6 +25,11 @@ class PostActivity : AppCompatActivity() {
     private lateinit var underlineButton: Button
     private  lateinit var postText: EditText
     private lateinit var clearButton: Button
+    private lateinit var leftButton: Button
+    private lateinit var centerButton: Button
+    private lateinit var rightButton: Button
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +39,10 @@ class PostActivity : AppCompatActivity() {
         underlineButton = findViewById(R.id.underLineButton)
         postText = findViewById(R.id.postText)
         clearButton = findViewById(R.id.clearButton)
+        leftButton = findViewById(R.id.leftButton)
+        rightButton= findViewById(R.id.rightButton)
+        centerButton = findViewById(R.id.centerButton)
+
 
         boldButton.setOnClickListener{
             val spannableString = SpannableStringBuilder(postText.text)
@@ -54,13 +65,23 @@ class PostActivity : AppCompatActivity() {
                 spannableString.setSpan(UnderlineSpan(),
                     postText.selectionStart,postText.selectionEnd, Spannable.SPAN_EXCLUSIVE_INCLUSIVE)
                 postText.text = spannableString
-
         }
 
         clearButton.setOnClickListener{
             val str = postText.text.toString()
             postText.setText(str)
         }
+        leftButton.setOnClickListener(){
+            postText.gravity = Gravity.LEFT
+        }
+        centerButton.setOnClickListener(){
+            postText.gravity = Gravity.CENTER_HORIZONTAL
+        }
+        rightButton.setOnClickListener(){
+            postText.gravity = Gravity.RIGHT
+        }
+
+
 
     }
 }

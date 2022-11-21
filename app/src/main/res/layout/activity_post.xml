@@ -48,10 +48,48 @@
         android:id="@+id/boldButton"
         android:layout_width="49dp"
         android:layout_height="48dp"
-        android:layout_marginStart="88dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:backgroundTint="@color/white"
         android:text="B"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/rightButton"
+        app:layout_constraintTop_toBottomOf="@+id/postText" />
+
+    <Button
+        android:id="@+id/rightButton"
+        android:layout_width="49dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/white"
+        android:text="R"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/centerButton"
+        app:layout_constraintTop_toBottomOf="@+id/postText" />
+
+    <Button
+        android:id="@+id/centerButton"
+        android:layout_width="49dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/white"
+        android:text="C"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/leftButton"
+        app:layout_constraintTop_toBottomOf="@+id/postText" />
+
+    <Button
+        android:id="@+id/leftButton"
+        android:layout_width="49dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/white"
+        android:text="L"
         android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
